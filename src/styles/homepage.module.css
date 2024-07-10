@@ -18,7 +18,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .header {
@@ -165,6 +167,6 @@ body {
     padding: 10px;
 }
 
-.footer>div {
+.footer>* {
     padding: 0px 10px;
 }
