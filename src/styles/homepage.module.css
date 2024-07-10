@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
     --light-grey: #ccc;
@@ -20,6 +22,7 @@ body {
 }
 
 .header {
+    font-family: "Nunito Sans";
     background-color: white;
     width: 100vw;
     height: 60px;
@@ -45,7 +48,10 @@ body {
 }
 
 .footer {
+    font-family: "Lato";
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: white;
     width: 100vw;
     height: 60px;
@@ -144,4 +150,21 @@ body {
 
 .shadow {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image {
+    width: 20px;
+    height: 20px;
+}
+
+.header>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.footer>div {
+    padding: 0px 10px;
 }
