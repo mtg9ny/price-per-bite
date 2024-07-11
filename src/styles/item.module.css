@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-size: 120% 120%;
+    background-position: center;
+}
+
+.textBackground {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>div {
+    text-align: center;
+    color: white;
+}

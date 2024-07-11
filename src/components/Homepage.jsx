@@ -1,6 +1,7 @@
-import logo from '../assets/cookie.svg'
 import styles from '../styles/homepage.module.css'
 import useInput from '../hooks/useInput'
+import { Link } from 'react-router-dom';
+import Header from './Header.jsx'
 export default function HomePage() {
     const { input, setInput } = useInput();
 
@@ -11,12 +12,7 @@ export default function HomePage() {
     return (
         <>
             <div className={styles.mainDiv}>
-                <div className={`${styles.header} ${styles.shadow}`}>
-                    <div>
-                        <img src={logo} className={styles.image} alt="" />
-                        <div>Price Per Bite</div>
-                    </div>
-                </div>
+                <Header />
 
                 <div className={`${styles.inputContainer} ${styles.shadow}`} >
                     <div className={styles.titleBlock}>
@@ -28,7 +24,7 @@ export default function HomePage() {
                         <div className={styles.searchContainer}>
                             <input type="text" className={styles.styledInput} value={input} onChange={handleInputChange} />
                             <div className={styles.horizontalDivider}></div>
-                            <button type="submit" className={styles.submitArrow}>&gt;</button>
+                            <Link to='./search' className={styles.submitArrow}>&gt;</Link>
                         </div>
                         <div className={styles.bottomText}>Try searching for chicken parmesan, meatloaf, etc.</div>
                     </div>

@@ -1,0 +1,8 @@
+.itemContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1px solid pink;
+    gap: 40px;
+    padding: 40px;
+    margin: 10px;
+}
