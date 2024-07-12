@@ -1,5 +1,6 @@
 import Homepage from "./components/Homepage";
 import SearchPage from "./components/SearchPage";
+import Individual from "./components/Individual";
 
 const routes = [
     {
@@ -9,7 +10,11 @@ const routes = [
     {
         path: "/search",
         element: <SearchPage />,
-    }
+    },
+    {
+        path: "/search/individual",
+        element: <Individual />,
+    },
 ];
 
 export default routes;
