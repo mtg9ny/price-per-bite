@@ -7,10 +7,6 @@ export default function tempIndividual() {
     const apiKey = '6a16595f4c9a49c9aea37e1a0e93945c';
 
     useEffect(() => {
-        console.log(`Retrieved ID: ${ID}`);
-    }, [ID]);
-
-    useEffect(() => {
         if (ID) {
             fetch(`https://api.spoonacular.com/recipes/${ID}/information?apiKey=${apiKey}`, { mode: 'cors' })
                 .then(response => {
