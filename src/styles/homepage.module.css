@@ -7,7 +7,6 @@
 }
 
 body {
-    height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -21,18 +20,6 @@ body {
     background-image: url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
-}
-
-.header {
-    font-family: "Nunito Sans";
-    background-color: white;
-    width: 100vw;
-    height: 60px;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .inputContainer {
@@ -55,7 +42,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    width: 100vw;
+    width: 100%;
     height: 60px;
 }
 
@@ -153,19 +140,6 @@ body {
 
 .shadow {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-}
-
-.image {
-    width: 20px;
-    height: 20px;
-}
-
-.header>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding: 10px;
 }
 
 .footer>* {

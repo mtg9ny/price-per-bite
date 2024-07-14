@@ -19,16 +19,14 @@ export default function Individual() {
             <div className={styles.flexContainer}>
                 <div className={styles.left}>
                     <Image url={json.image} />
-                    <Keywords />
+                    <Keywords json={json} />
                 </div>
                 <div className={styles.right}>
                     <Summary summary={removeTags(json.summary)} />
-                    <Instructions />
-                    <Ingredients />
+                    <Instructions instructions={json.analyzedInstructions[0].steps} />
+                    <Ingredients ingredients={json.analyzedInstructions[0].steps} />
                 </div>
             </div>
         </>
     );
 }
-
-// we will add the image, summary, all the steps, ingredients, and a sidebar of vegan, dairy free ...

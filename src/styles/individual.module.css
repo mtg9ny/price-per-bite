@@ -1,36 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 html,
 body {
     margin: 0;
     padding: 0;
 }
 
-.flexContainer {
+.summary div:nth-child(1) {
+    font-family: "Oswald", sans-serif;
+}
+
+.ingredients div:nth-child(1) {
+    font-family: "Oswald", sans-serif;
+}
+
+.instructions div:nth-child(1) {
+    font-family: "Oswald", sans-serif;
+}
+
+* {
     box-sizing: border-box;
+    --blue: #0ea5e9;
+    --grey: #e5e7eb;
+}
+
+.flexContainer {
+    line-height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    background-color: var(--grey);
     padding: 20px;
     display: flex;
     gap: 20px;
 }
 
-.gridContainer * {}
-
 .title {
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 100%;
     background-color: lightblue;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .image {
+    box-sizing: border-box;
     height: 175px;
+    background-size: 100% 100%;
+    background-position: center;
+    border: solid lightblue;
+
 }
 
-.summary {}
+.summary {
+    border: solid lightblue;
+}
 
-.ingredients {}
+.instructions {
+    border: solid lightblue;
+}
 
-.picture {}
+.ingredients {
+    border: solid lightblue;
+}
 
 .left {
     flex: 1;
@@ -44,7 +82,7 @@ body {
 
 .left * {
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: white;
     border-radius: 15px;
     width: 100%;
     padding: 20px;
@@ -62,8 +100,30 @@ body {
 
 .right * {
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: white;
     border-radius: 15px;
     width: 100%;
     padding: 20px;
+}
+
+.ingredient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    border: 5px;
+}
+
+.ingredientsContainer {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+}
+
+.keywords {
+    border: solid lightblue;
+}
+
+.shadow {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
