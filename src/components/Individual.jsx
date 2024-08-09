@@ -36,7 +36,9 @@ export default function Individual() {
             {json ? (
                 <>
                     <Header />
-                    <Title title={json.title} />
+                    <div>
+                        <Title title={json.title} />
+                    </div>
                     <div className={styles.flexContainer}>
                         <div className={styles.left}>
                             <Image url={json.image} />

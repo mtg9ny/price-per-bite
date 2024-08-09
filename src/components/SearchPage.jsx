@@ -3,10 +3,19 @@ import Header from "./Header";
 import useInput from '../hooks/useInput'
 import Item from "./Item";
 import styles from '../styles/search-page.module.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchPage() {
+    const navigate = useNavigate();
     const { input } = useInput();
     const { JSONObject } = useFetchAPI();
+
+    function handleClick() {
+        setTimeout(() => {
+            navigate('/', { replace: true });
+            window.location.reload();
+        }, 100);
+    }
 
     const isDataLoaded = JSONObject && JSONObject.results && JSONObject.results.length > 0;
     return (
@@ -14,7 +23,7 @@ export default function SearchPage() {
             <Header />
 
             <div className={styles.headerContainer}>
-                <div className={styles.headerButton}>← Back to Search</div>
+                <div className={styles.headerButton} onClick={handleClick}>← Back to Search</div>
                 <div className={styles.headerText}>Search results for &quot;{input}&quot;</div>
             </div>
 
