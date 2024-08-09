@@ -1,7 +1,15 @@
+* {
+    box-sizing: border-box;
+    --blue: #0ea5e9;
+    --grey: #e5e7eb;
+}
+
 .itemContainer {
     display: grid;
+    background-color: var(--grey);
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    border: 1px solid pink;
+    border-radius: 10px;
+    border: 1px solid lightgray;
     gap: 40px;
     padding: 40px;
     margin: 10px;
@@ -9,4 +17,26 @@
 
 .itemContainer>* {
     cursor: pointer;
+}
+
+.headerContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 10px;
+}
+
+.headerButton {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+.headerText {
+    font-size: 3rem;
 }
