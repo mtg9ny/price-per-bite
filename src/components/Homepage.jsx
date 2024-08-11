@@ -19,7 +19,7 @@ export default function HomePage() {
     };
 
     useEffect(() => {
-
+        setInput("");
         if (inputRef.current) {
             inputRef.current.focus();
         }

@@ -22,7 +22,7 @@ export default function SearchPage() {
         <>
             <Header />
 
-            <div className={styles.headerContainer}>
+            <div className={`${styles.headerContainer} ${styles.shadow}`}>
                 <div className={styles.headerButton} onClick={handleClick}>← Back to Search</div>
                 <div className={styles.headerText}>Search results for &quot;{input}&quot;</div>
             </div>
