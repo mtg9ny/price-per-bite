@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer {
+    display: grid;
+    background-color: var(--grey);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-radius: 10px;
+    gap: 40px;
+    padding: 40px;
+    margin: 10px;
+}
+
+.mainContainer>* {
+    border: solid lightblue;
+    cursor: pointer;
+}

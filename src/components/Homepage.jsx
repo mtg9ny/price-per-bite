@@ -3,6 +3,7 @@ import useInput from '../hooks/useInput'
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import Header from './Header.jsx'
+import Footer from './Footer.jsx';
 export default function HomePage() {
     const { input, setInput } = useInput();
     const navigate = useNavigate();
@@ -47,10 +48,7 @@ export default function HomePage() {
                     <div>This website will automatically calculate the price of any recipe for you!</div>
                 </div>
 
-                <div className={styles.footer}>
-                    <div>Created by Conroy Lee</div>
-                    <a href="https://github.com/mtg9ny" target="_blank">GitHub</a>
-                </div>
+                <Footer />
             </div>
         </>
     )

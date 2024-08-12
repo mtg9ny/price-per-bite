@@ -14,6 +14,7 @@ export default function Keywords({ json }) {
                 {json.weightWatcherSmartPoints && <div>Weight Watcher Smart Points: {json.weightWatcherSmartPoints}</div>}
                 {json.preparationMinutes && <div>{json.preparationMinutes}</div>}
                 {json.cookingMinutes && <div>{json.cookingMinutes}</div>}
+                {json.pricePerServing && <div>Estimated Price: ${json.pricePerServing}</div>}
             </div>
         </>
     )

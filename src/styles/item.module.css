@@ -10,6 +10,11 @@
     gap: 10px;
     background-size: 120% 120%;
     background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
 }
 
 .textBackground {
