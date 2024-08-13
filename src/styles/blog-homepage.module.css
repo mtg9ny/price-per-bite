@@ -4,9 +4,10 @@ body {
 }
 
 .mainContainer {
+    flex: 6;
     display: grid;
     background-color: var(--grey);
-    min-height: 700px;
+    min-height: 800px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     border-radius: 10px;
     gap: 40px;
@@ -17,4 +18,8 @@ body {
 .mainContainer>* {
     background-color: white;
     cursor: pointer;
+}
+
+.bodyContent {
+    display: flex;
 }

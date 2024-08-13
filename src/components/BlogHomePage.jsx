@@ -1,6 +1,7 @@
 import styles from "../styles/blog-homepage.module.css"
 import Header from "./Header.jsx";
 import BlogRecipeCard from "./BlogRecipeCard.jsx";
+import SideBar from "./Sidebar.jsx";
 import { useState, useEffect } from "react";
 export default function BlogHomePage() {
     const [recipes, setRecipes] = useState([]);
@@ -17,15 +18,19 @@ export default function BlogHomePage() {
     return (
         <>
             <Header />
-            {isDataLoaded ? (
-                <div className={styles.mainContainer}>
-                    {recipes.map((element, index) => (
-                        <BlogRecipeCard key={index} id={element._id} title={element.title} description={element.description} instructions={element.instructions} ingredients={element.ingredients} />
-                    ))}
-                </div>
-            ) : (
-                <div>Loading...</div>
-            )}
+            <div className={styles.bodyContent}>
+                <SideBar />
+                {isDataLoaded ? (
+                    <div className={styles.mainContainer}>
+                        {recipes.map((element, index) => (
+                            <BlogRecipeCard key={index} id={element._id} title={element.title} description={element.description} instructions={element.instructions} ingredients={element.ingredients} />
+                        ))}
+                    </div>
+                ) : (
+                    <div>Loading...</div>
+                )}
+            </div>
+
         </>
     )
 }
