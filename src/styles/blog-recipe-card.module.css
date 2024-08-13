@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    border-radius: 10px;
+    padding: 16px;
+    gap: 6px;
+    font-family: "Poppins";
+}
+
+.container>div:first-child {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.container>div:nth-child(2) {
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.shadow {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}

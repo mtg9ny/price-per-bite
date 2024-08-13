@@ -9,6 +9,7 @@ import styles from '../styles/individual.module.css'
 import { useState, useEffect } from 'react'
 import useID from '../hooks/useID.jsx'
 
+// This is an individual recipe page
 export default function Individual() {
     const { ID } = useID();
     const [json, setJson] = useState(null);

@@ -6,6 +6,7 @@ body {
 .mainContainer {
     display: grid;
     background-color: var(--grey);
+    min-height: 700px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     border-radius: 10px;
     gap: 40px;
@@ -14,6 +15,6 @@ body {
 }
 
 .mainContainer>* {
-    border: solid lightblue;
+    background-color: white;
     cursor: pointer;
 }

@@ -2,6 +2,7 @@ import styles from '../styles/item.module.css';
 import useID from '../hooks/useID';
 import { useNavigate } from 'react-router-dom';
 
+// This is an individual card on the recipe search page
 export default function Item({ title, url, id }) {
     const { setID } = useID();
     const navigate = useNavigate();
