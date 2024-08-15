@@ -33,7 +33,7 @@ export default function HomePage() {
 
                 <div className={`${styles.inputContainer} ${styles.shadow}`} >
                     <div className={styles.titleBlock}>
-                        <div className={styles.title}>Price Per Bite</div>
+                        <div className={styles.title}>Price per Bite</div>
                         <div className={styles.divider}></div>
                     </div>
                     <div>Search for your recipe here!</div>

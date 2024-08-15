@@ -1,3 +1,7 @@
+:root {
+    --blue: #3b82f6;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -22,4 +26,58 @@ body {
 
 .bodyContent {
     display: flex;
+}
+
+.individualMainContainer {
+    flex: 6;
+    background-color: var(--grey);
+    min-height: 800px;
+    border-radius: 10px;
+    gap: 40px;
+    padding: 40px;
+    margin: 10px;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.horizontalLine {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin-top: 16px;
+}
+
+.recipeText {
+    line-height: 2;
+    margin: 26px;
+}
+
+li {
+    line-height: 2;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 16px;
+    gap: 16px;
+}
+
+.buttonContainer>* {
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonContainer>div:first-of-type {
+    background-color: var(--blue);
+}
+
+.buttonContainer>div:nth-child(2) {
+    background-color: red;
 }

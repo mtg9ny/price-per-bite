@@ -1,7 +1,8 @@
 import Header from "./Header"
+import SideBar from "./Sidebar";
 import useBlogRecipe from "../hooks/useBlogRecipe"
 import { useState, useEffect } from "react";
-import styles from '../styles/blog-individual.module.css'
+import styles from "../styles/blog-homepage.module.css"
 
 export default function BlogIndividual() {
     const { blogRecipe } = useBlogRecipe();
@@ -26,16 +27,33 @@ export default function BlogIndividual() {
 
     return (
         <>
-            {json ? (
-                <>
-                    <Header />
-                    <p>{json.title}</p>
-                    <p>{json.description}</p>
-                    <p>{json.instructions}</p>
-                </>
-            ) : (
-                <div>Loading...</div>
-            )}
+            <Header />
+            <div className={styles.bodyContent}>
+                <SideBar />
+                <div className={styles.individualMainContainer}>
+                    {json ? (
+                        <>
+                            <div className={styles.title}>{json.title}</div>
+                            <div className={styles.horizontalLine}></div>
+                            <div className={styles.recipeText}>Description: {json.description}</div>
+                            <div className={styles.recipeText}>Instructions: {json.instructions}</div>
+                            <div className={styles.recipeText}>Ingredients:</div>
+                            <ul>
+                                {json.ingredients.map((ingredient, index) => (
+                                    <li key={index}>{ingredient}</li>
+                                ))}
+                            </ul>
+                            <div className={styles.horizontalLine}></div>
+                            <div className={styles.buttonContainer}>
+                                <div>Update Entry</div>
+                                <div>Delete Entry</div>
+                            </div>
+                        </>
+                    ) : (
+                        <div></div>
+                    )}
+                </div>
+            </div>
         </>
     )
 }

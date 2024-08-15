@@ -53,7 +53,7 @@ export default function Individual() {
                     </div>
                 </>
             ) : (
-                <div>Loading...</div>
+                <div></div>
             )}
         </>
     );

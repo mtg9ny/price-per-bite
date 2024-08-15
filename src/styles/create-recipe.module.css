@@ -1,0 +1,13 @@
+.bodyContent {
+    display: flex;
+}
+
+.individualMainContainer {
+    flex: 6;
+    background-color: var(--grey);
+    min-height: 800px;
+    border-radius: 10px;
+    gap: 40px;
+    padding: 40px;
+    margin: 10px;
+}

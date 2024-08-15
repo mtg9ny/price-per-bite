@@ -16,18 +16,28 @@
 }
 
 .image {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 .header>div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
     padding: 10px;
 }
 
 .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     cursor: pointer;
+}
+
+.verticalLine {
+    width: 2px;
+    background-color: black;
+    height: 40px;
 }

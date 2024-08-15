@@ -27,10 +27,9 @@ export default function BlogHomePage() {
                         ))}
                     </div>
                 ) : (
-                    <div>Loading...</div>
+                    <div></div>
                 )}
             </div>
-
         </>
     )
 }

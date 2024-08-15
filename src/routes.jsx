@@ -3,6 +3,7 @@ import SearchPage from "./components/SearchPage";
 import Individual from "./components/Individual";
 import BlogHomePage from "./components/BlogHomePage";
 import BlogIndividual from "./components/BlogIndividual"
+import CreateRecipe from "./components/CreateRecipe";
 
 const routes = [
     {
@@ -24,6 +25,10 @@ const routes = [
     {
         path: "blog/recipe",
         element: <BlogIndividual />,
+    },
+    {
+        path: "blog/recipe/create-recipe",
+        element: <CreateRecipe />,
     }
 ];
 
