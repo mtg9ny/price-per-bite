@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .bodyContent {
     display: flex;
 }
@@ -10,4 +15,47 @@
     gap: 40px;
     padding: 40px;
     margin: 10px;
+}
+
+.title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.horizontalLine {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+    margin-top: 16px;
+}
+
+.pair {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px;
+    gap: 10px;
+}
+
+input,
+textarea {
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+form>button {
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 16px;
+    gap: 16px;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: var(--blue);
+    border: none;
+    font-size: 1em;
 }
