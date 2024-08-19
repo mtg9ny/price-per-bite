@@ -44,7 +44,17 @@ textarea {
     padding: 10px;
 }
 
-form>button {
+.ingredientPair {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ingredientPair button {
+    background-color: red;
+}
+
+button {
     font-family: "Times New Roman", Times, serif;
     display: flex;
     justify-content: flex-start;
@@ -55,7 +65,12 @@ form>button {
     padding: 10px;
     color: white;
     cursor: pointer;
-    background-color: var(--blue);
+    background-color: green;
     border: none;
     font-size: 1em;
+}
+
+.addButton {
+    width: 120px;
+    background-color: var(--blue);
 }
