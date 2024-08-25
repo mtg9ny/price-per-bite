@@ -1,17 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import SideBar from "./Sidebar";
 import styles from "../styles/create-recipe.module.css";
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateRecipe() {
-    const [ingredients, setIngredients] = useState([""]);
+    const location = useLocation();
+    const [id, setId] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [instructions, setInstructions] = useState("");
+    const [ingredients, setIngredients] = useState([""]);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (location.state) {
+            const { _id, title, description, instructions, ingredients } = location.state;
+            setId(_id || ""); // Make sure _id is correctly assigned
+            setTitle(title || "");
+            setDescription(description || "");
+            setInstructions(instructions || "");
+            setIngredients(ingredients || [""]);
+        }
+    }, [location.state]);
 
     const handleIngredientChange = (index, event) => {
         const newIngredients = [...ingredients];
@@ -33,15 +47,19 @@ export default function CreateRecipe() {
         setError(null);
         setSuccess(null);
 
-        const data = { title, description, instructions, ingredients };
+        const data = { title, description, instructions, ingredients, _id: id };
 
         try {
-            const response = await fetch('http://localhost:3000/catalog/recipe/create', {
+            const url = id
+                ? `http://localhost:3000/catalog/recipe/${id}/update`
+                : 'http://localhost:3000/catalog/recipe/create';
+
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(data), // Ensure _id is included in the payload
             });
 
             if (!response.ok) {
@@ -57,6 +75,7 @@ export default function CreateRecipe() {
         }
     };
 
+
     function handleReroute() {
         setTimeout(() => {
             navigate('/blog', { replace: true });
@@ -70,7 +89,7 @@ export default function CreateRecipe() {
             <div className={styles.bodyContent}>
                 <SideBar />
                 <div className={styles.individualMainContainer}>
-                    <div className={styles.title}>Create New Recipe:</div>
+                    <div className={styles.title}>Create or Update Recipe:</div>
                     <div className={styles.horizontalLine}></div>
                     <form onSubmit={handleSubmit}>
                         <div className={styles.pair}>

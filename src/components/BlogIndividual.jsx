@@ -53,6 +53,14 @@ export default function BlogIndividual() {
             });
     }
 
+    function updateEntry() {
+        if (!json || !json._id) {
+            console.error('Recipe data is missing or does not have an ID:', json);
+            return;
+        }
+        navigate('/blog/recipe/create-recipe', { state: json });
+    }
+
     return (
         <>
             <Header />
@@ -73,7 +81,7 @@ export default function BlogIndividual() {
                             </ul>
                             <div className={styles.horizontalLine}></div>
                             <div className={styles.buttonContainer}>
-                                <div>Update Entry</div>
+                                <div onClick={updateEntry}>Update Entry</div>
                                 <div onClick={deleteEntry}>Delete Entry</div>
                             </div>
                         </>
