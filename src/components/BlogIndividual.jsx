@@ -3,10 +3,12 @@ import SideBar from "./Sidebar";
 import useBlogRecipe from "../hooks/useBlogRecipe"
 import { useState, useEffect } from "react";
 import styles from "../styles/blog-homepage.module.css"
+import { useNavigate } from "react-router-dom";
 
 export default function BlogIndividual() {
     const { blogRecipe } = useBlogRecipe();
     const [json, setJson] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (blogRecipe) {
@@ -24,6 +26,32 @@ export default function BlogIndividual() {
                 .catch(error => console.error("Failed to fetch data:", error));
         }
     }, [blogRecipe]);
+
+    function deleteEntry() {
+        fetch(`http://localhost:3000/catalog/recipe/${json._id}/delete`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ recipeid: json._id }),
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Handle successful deletion, e.g., redirect or remove the element from the DOM
+                    console.log('Entry deleted successfully');
+                    setTimeout(() => {
+                        navigate('/blog', { replace: true });
+                        window.location.reload();
+                    }, 100);
+                } else {
+                    // Handle failure
+                    console.error('Failed to delete entry');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
 
     return (
         <>
@@ -46,7 +74,7 @@ export default function BlogIndividual() {
                             <div className={styles.horizontalLine}></div>
                             <div className={styles.buttonContainer}>
                                 <div>Update Entry</div>
-                                <div>Delete Entry</div>
+                                <div onClick={deleteEntry}>Delete Entry</div>
                             </div>
                         </>
                     ) : (
